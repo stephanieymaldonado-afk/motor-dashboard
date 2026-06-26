@@ -88,6 +88,21 @@ kpi = kpi.rename(
     }
 )
 
+first_columns = [
+    "Evento",
+    "Run",
+    "Motor",
+    "Piloto",
+    "Auto",
+    "Prioridad",
+    "Observaciones",
+]
+
+other_columns = [col for col in report.columns if col not in first_columns]
+
+report = report[first_columns + other_columns]
+
+
 kpi = kpi[
     [
         "Motor",
